@@ -44,6 +44,19 @@ if (process.argv[2] === '-z') {
     });
 }
 
+// argv[2] is -message argv IP on argv[3] and port on argv[4] is portNumber and message on argv[5]
+if (process.argv[2] === '-message' ) {
+    let IP = process.argv[3] || '127.0.0.1';
+    let portNumber = process.argv[4];
+    let message = process.argv[5];
+    if(portNumber){
+        connect(portNumber, IP);
+        if(message){
+            client.write(message);
+        }
+    }
+}
+
 
 
 function connect(portNumber, IP){
