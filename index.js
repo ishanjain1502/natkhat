@@ -2,7 +2,6 @@
 
 const net = require('net');
 const dgram = require('dgram');
-console.log('hello wolrd from natkhat!');
 
 const { exec } = require('child_process');
 const client = new net.Socket();
@@ -28,8 +27,9 @@ if (process.argv[2] === '-l' ) {
 if (process.argv[2] === '-l' && process.argv[4] === '-u') {
     let portNumber = process.argv[5];
     let IP = process.argv[3] ||  '127.0.0.1';
+    let message = process.argv[6];
     if(portNumber){
-        connectOverUDP(portNumber, IP);
+        connectOverUDP(portNumber, IP, message);
     }else{
         console.log('Please provide a port number => ', process.argv[4]);
     }
@@ -83,14 +83,10 @@ function connect(portNumber, IP){
     }
 }
 
-function connectOverUDP(portNumber, IP){
+function connectOverUDP(portNumber, IP, message){
     try{
-        
-        udpClient.on('message', (message) => {
-            console.log('Received message from client: ' + message);
-        });
-
-        let data = Buffer.from("hello world");
+        let messageData = message || "Hello World!"
+        let data = Buffer.from(`${messageData}`);
 
         udpClient.send(data , portNumber, IP, function(error){
             if(error){
