@@ -4,8 +4,8 @@
 An attempt to clone netcat's functionalities using nodejs's native abilities, and not using external libraries, so as to understand how things work under the hood
 ## Screenshots
 
-![Server Terminal Screenshot](./assets/tcp_vite.png)
-![Natkhat Screenshot](./assets/natkhat_vite.png)
+![Server Terminal Screenshot](./assets/tcp_vite.png/468x300?text=Server+Terminal+Screenshot)
+![Natkhat Screenshot](./assets/natkhat_vite.png/468x300?text=Natkhat+Screenshot)
 
 ### How to setup on your machine
 * Clone the repo on your machine
