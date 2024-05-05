@@ -1,8 +1,0 @@
-What am i trying to build?
-a netcat clone kinda
-
--> what features of netcat
-
-1. being able to connect to a tcp server -> done
-2. being able to connect to a udp server -> done
-3. check connection is live for a tcp server -> done
