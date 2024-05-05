@@ -64,7 +64,7 @@ function connect(portNumber, IP){
         // let ipAddress = IP || `0.0.0.0`;
         let ipAddress = 'localhost'
         client.connect(portNumber, ipAddress, () => {
-            console.log('Connected to server at', `${ipAddress}:${portNumber}`);
+            console.log('Listening to server at', `${ipAddress}:${portNumber}`);
         });
 
         client.on('data', (data) => {
@@ -101,14 +101,6 @@ function connectOverUDP(portNumber, IP, message){
     }
 }
 
-function connectAsServer(portNumber, IP, data){
-    try{
-
-
-    }catch(err){
-        console.log('err in connectAsServer() -->\n', err);
-    }
-}
 
 process.on('SIGINT', () => {
     console.log('Received SIGINT. Closing application...');
